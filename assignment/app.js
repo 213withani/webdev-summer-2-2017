@@ -10,7 +10,17 @@ var app = angular.module("WampApp", []);
 app.controller("loginController", loginController);
 
 function loginController($scope) {
-    $scope.login =  function (usr,pwd) {
-        alert("login click: "+usr +" pwd:"+pwd);
+    var users = [{_id:123, username:"alice", password:"alice", firstName:"Alice", lastName:"Wonderland"},
+    {_id:234, username:"bob", password:"bob", firstName:"Bob", lastName:"Bob"},
+    ];
+
+    $scope.login =  function (user) {
+        for (var u in users) {
+            var _user=users[u];
+
+            if (_user.username===user.username && _user.password===user.password ) {
+                 $scope.welcomeUser = _user;
+            }
+        }
     }
 }

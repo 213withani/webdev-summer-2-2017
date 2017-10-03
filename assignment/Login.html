@@ -15,11 +15,12 @@
 <body>
     <div class="container-fluid">
         <div ng-controller="loginController">
-            
+            <div ng-show="welcomeUser" class="alert alert-info">{{welcomeUser.username}}</div>
+
             <h2>Login</h2>
             <label for="username">Username</label>
             <input placeholder="alice" 
-                    ng-model="username"
+                    ng-model="user.username"
                     type="text" 
                     name="username" 
                     id="username" 
@@ -27,7 +28,7 @@
 
             <label for="password">Password</label>
             <input placeholder="123"    
-                    ng-model="password"
+                    ng-model="user.password"
                     type="password" 
                     name="password" 
                     id="password " 
@@ -35,7 +36,7 @@
                    
             <a class="btn btn-primary btn-block" 
                 href="#" 
-                ng-click="login(username, password)"
+                ng-click="login(user)"
                 role="button">Login</a>
 
             <a class="btn btn-success btn-block" 
