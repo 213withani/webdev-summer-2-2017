@@ -10,5 +10,7 @@ var app = angular.module("WampApp", []);
 app.controller("loginController", loginController);
 
 function loginController($scope) {
-    $scope.Hello="Yo";
+    $scope.login =  function (usr,pwd) {
+        alert("login click: "+usr +" pwd:"+pwd);
+    }
 }

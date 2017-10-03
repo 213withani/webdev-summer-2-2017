@@ -15,7 +15,7 @@
 <body>
     <div class="container-fluid">
         <div ng-controller="loginController">
-            {{Hello}}
+            
             <h2>Login</h2>
             <label for="username">Username</label>
             <input placeholder="alice" 
@@ -26,14 +26,21 @@
                     class="form-control">
 
             <label for="password">Password</label>
-            <input placeholder="123" 
+            <input placeholder="123"    
+                    ng-model="password"
                     type="password" 
                     name="password" 
                     id="password " 
                     class="form-control">
-                    {{username}}
-            <a class="btn btn-primary btn-block" href="#" role="button">Login</a>
-            <a class="btn btn-success btn-block" href="register.html" role="button">Register</a>
+                   
+            <a class="btn btn-primary btn-block" 
+                href="#" 
+                ng-click="login(username, password)"
+                role="button">Login</a>
+
+            <a class="btn btn-success btn-block" 
+                href="register.html" 
+                role="button">Register</a>
         </div>
     </div>
 </body>
