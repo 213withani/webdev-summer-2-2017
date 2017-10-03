@@ -18,10 +18,20 @@
             {{Hello}}
             <h2>Login</h2>
             <label for="username">Username</label>
-            <input placeholder="alice" type="text" name="username" id="username" class="form-control">
+            <input placeholder="alice" 
+                    ng-model="username"
+                    type="text" 
+                    name="username" 
+                    id="username" 
+                    class="form-control">
 
             <label for="password">Password</label>
-            <input placeholder="123" type="password" name="password" id="password " class="form-control">
+            <input placeholder="123" 
+                    type="password" 
+                    name="password" 
+                    id="password " 
+                    class="form-control">
+                    {{username}}
             <a class="btn btn-primary btn-block" href="#" role="button">Login</a>
             <a class="btn btn-success btn-block" href="register.html" role="button">Register</a>
         </div>
