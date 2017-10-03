@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="WampApp">
 
 <head>
     <meta charset="UTF-8">
@@ -7,20 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <script src="../vendor/angular/angular.js"></script>
+    <script src="app.js"></script>
     <link rel="stylesheet" href="../vendor/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <div class="container-fluid">
-        <h2>Login</h2>
-        <label for="username">Username</label>
-        <input placeholder="alice" type="text" name="username" id="username" class="form-control">
+        <div ng-controller="loginController">
+            <h2>Login</h2>
+            <label for="username">Username</label>
+            <input placeholder="alice" type="text" name="username" id="username" class="form-control">
 
-        <label for="password">Password</label>
-        <input placeholder="123" type="password" name="password" id="password " class="form-control">
-        <a class="btn btn-primary btn-block" href="#" role="button">Login</a>
-        <a class="btn btn-success btn-block" href="register.html" role="button">Register</a>
+            <label for="password">Password</label>
+            <input placeholder="123" type="password" name="password" id="password " class="form-control">
+            <a class="btn btn-primary btn-block" href="#" role="button">Login</a>
+            <a class="btn btn-success btn-block" href="register.html" role="button">Register</a>
+        </div>
     </div>
 </body>
 </html
