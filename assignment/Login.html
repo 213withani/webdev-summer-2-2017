@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="WampApp">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
-    <script src="../vendor/angular/angular.js"></script>
-    <script src="app.js"></script>
+
     <link rel="stylesheet" href="../vendor/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -19,29 +18,14 @@
 
             <h2>Login</h2>
             <label for="username">Username</label>
-            <input placeholder="alice" 
-                    ng-model="user.username"
-                    type="text" 
-                    name="username" 
-                    id="username" 
-                    class="form-control">
+            <input placeholder="alice" ng-model="user.username" type="text" name="username" id="username" class="form-control">
 
             <label for="password">Password</label>
-            <input placeholder="123"    
-                    ng-model="user.password"
-                    type="password" 
-                    name="password" 
-                    id="password " 
-                    class="form-control">
-                   
-            <a class="btn btn-primary btn-block" 
-                href="#" 
-                ng-click="login(user)"
-                role="button">Login</a>
+            <input placeholder="123" ng-model="user.password" type="password" name="password" id="password " class="form-control">
 
-            <a class="btn btn-success btn-block" 
-                href="register.html" 
-                role="button">Register</a>
+            <a class="btn btn-primary btn-block" href="#" ng-click="login(user)" role="button">Login</a>
+
+            <a class="btn btn-success btn-block" href="register.html" role="button">Register</a>
         </div>
     </div>
 </body>
