@@ -16,7 +16,7 @@
             templateUrl:"profile.html"
         })
     }
-    function loginController($scope) {
+    function loginController($scope,$location) {
         var users = [{ _id: 123, username: "alice", password: "alice", firstName: "Alice", lastName: "Wonderland" },
         { _id: 234, username: "bob", password: "bob", firstName: "Bob", lastName: "Bob" },
         ];
@@ -26,9 +26,10 @@
                 var _user = users[u];
 
                 if (_user.username === user.username && _user.password === user.password) {
-                    $scope.welcomeUser = _user;
+                    $location.url("profile");
                 }
             }
+            $scope.errorMessage = "User not found.";
         }
     }
 })();
