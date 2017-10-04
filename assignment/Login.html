@@ -1,32 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="container-fluid">
+    <div ng-controller="loginController">
+        <div ng-show="welcomeUser" class="alert alert-info">{{welcomeUser.username}}</div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+        <h2>Login</h2>
+        <label for="username">Username</label>
+        <input placeholder="alice" ng-model="user.username" type="text" name="username" id="username" class="form-control">
 
-    <link rel="stylesheet" href="../vendor/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+        <label for="password">Password</label>
+        <input placeholder="123" ng-model="user.password" type="password" name="password" id="password " class="form-control">
 
-<body>
-    <div class="container-fluid">
-        <div ng-controller="loginController">
-            <div ng-show="welcomeUser" class="alert alert-info">{{welcomeUser.username}}</div>
+        <a class="btn btn-primary btn-block" href="#" ng-click="login(user)" role="button">Login</a>
 
-            <h2>Login</h2>
-            <label for="username">Username</label>
-            <input placeholder="alice" ng-model="user.username" type="text" name="username" id="username" class="form-control">
-
-            <label for="password">Password</label>
-            <input placeholder="123" ng-model="user.password" type="password" name="password" id="password " class="form-control">
-
-            <a class="btn btn-primary btn-block" href="#" ng-click="login(user)" role="button">Login</a>
-
-            <a class="btn btn-success btn-block" href="register.html" role="button">Register</a>
-        </div>
+        <a class="btn btn-success btn-block" href="register.html" role="button">Register</a>
     </div>
-</body>
-</html
+</div>
