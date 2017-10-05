@@ -1,4 +1,4 @@
-(function () {
+// (function () {
     // Bind the HTML. Declare a variable to be reused.
     var app = angular.module("WampApp", ["ngRoute"]);
 
@@ -15,9 +15,12 @@
 
     function profileController($scope, $routeParams) {
         var userId = $routeParams.userId;
+        
         for (var u in users) {
+            
             if (users[u]._id === userId) {
                 $scope.user = users[u];
+                alert(users[u].username);
             }
         }
     }
@@ -30,10 +33,11 @@
             templateUrl: "profile.html"
         })
     }
+
     function loginController($scope, $location) {
         var users = [
             { _id: 123, username: "alice", password: "alice", firstName: "Alice", lastName: "Wonderland" },
-            { _id: 234, username: "bob", password: "bob", firstName: "Bob", lastName: "Bob" },
+            { _id: 234, username: "bob", password: "bob", firstName: "Bob", lastName: "Bob" }
         ];
 
         $scope.login = function (user) {
@@ -47,4 +51,4 @@
             $scope.errorMessage = "User not found.";
         }
     }
-})();
+// })();   
