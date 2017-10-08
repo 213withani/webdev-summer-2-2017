@@ -5,19 +5,9 @@
     angular.module("WampApp")
         .controller("profileController", profileController);
 
-    var users = [
-        { _id: 123, username: "alice", password: "alice", firstName: "Alice", lastName: "Wonder" },
-        { _id: 234, username: "bob", password: "bob", firstName: "Bob", lastName: "Bob" },
-    ];
-
-    function profileController($scope, $routeParams) {
+    function profileController($scope, $routeParams, userService) {
         var userId = $routeParams.userId;
 
-        for (var u in users) {
-            //type coercion between number and string
-            if (users[u]._id == userId) {
-                $scope.user = users[u];
-            }
-        }
+        var user=userService.findUserById(userId);
     }
 })();   

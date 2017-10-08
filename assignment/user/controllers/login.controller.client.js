@@ -5,21 +5,15 @@
     angular.module("WampApp")
         .controller("loginController", loginController);
 
-    var users = [
-        { _id: 123, username: "alice", password: "alice", firstName: "Alice", lastName: "Wonder" },
-        { _id: 234, username: "bob", password: "bob", firstName: "Bob", lastName: "Bob" },
-    ];
-
-    function loginController($scope, $location) {
+    function loginController($scope, $location, userService) {
         $scope.login = function (user) {
-            for (var u in users) {
-                var _user = users[u];
-
-                if (_user.username === user.username && _user.password === user.password) {
-                    $location.url("profile/" + _user._id);
-                }
+            var user = userService.findUserByUsernameAndPassword(user.username, user.password);
+            if (user === null) {
+                $scope.errorMessage = "User not found.";
+            } else {
+                $location.url("profile/" + user._id);
             }
-            $scope.errorMessage = "User not found.";
+
         }
     }
 })();   
