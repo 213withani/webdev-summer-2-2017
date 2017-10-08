@@ -8,6 +8,19 @@
     function profileController($scope, $routeParams, userService) {
         var userId = $routeParams.userId;
 
-        var user=userService.findUserById(userId);
+        $scope.updateUser=updateUser;
+        $scope.unregister=unregister;
+
+        function init() {
+            var user=userService.findUserById(userId);   
+        }
+        init(); 
+    }
+    function updateUser() {
+        
+    }
+
+    function unregister() {
+        
     }
 })();   
