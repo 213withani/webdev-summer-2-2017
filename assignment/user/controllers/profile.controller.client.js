@@ -3,7 +3,6 @@
     // Binding the view with the controller: 
     // View notify the controller of its events.
     angular.module("WampApp")
-        .controller("loginController", loginController)
         .controller("profileController", profileController);
 
     var users = [
@@ -19,19 +18,6 @@
             if (users[u]._id == userId) {
                 $scope.user = users[u];
             }
-        }
-    }
-
-    function loginController($scope, $location) {
-        $scope.login = function (user) {
-            for (var u in users) {
-                var _user = users[u];
-
-                if (_user.username === user.username && _user.password === user.password) {
-                    $location.url("profile/" + _user._id);
-                }
-            }
-            $scope.errorMessage = "User not found.";
         }
     }
 })();   
