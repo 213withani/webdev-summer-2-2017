@@ -30,7 +30,7 @@
                 var _user = users[u];
 
                 if (_user.username === username && _user.password === password) {
-                    alert(_user.username);
+                    alert("userservice findUserByUsernameAndPassword: "+ _user.username);
                     return _user;
                 }
             }

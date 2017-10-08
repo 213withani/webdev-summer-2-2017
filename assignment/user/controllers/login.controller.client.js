@@ -16,7 +16,7 @@
 
         function login(user) {
             var user = userService.findUserByUsernameAndPassword(user.username, user.password);
-            alert(user.username);
+            
             if (user === null) {
                 $scope.errorMessage = "User not found.";
             } else {

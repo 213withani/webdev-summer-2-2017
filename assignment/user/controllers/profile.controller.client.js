@@ -12,10 +12,11 @@
         $scope.unregister=unregister;
 
         function init() {
-            var user=userService.findUserById(userId);   
+            $scope.user=userService.findUserById(userId); 
         }
         init(); 
     }
+
     function updateUser() {
         
     }
