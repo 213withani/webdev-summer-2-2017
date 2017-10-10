@@ -6,13 +6,15 @@
         .controller("profileController", profileController);
 
     function profileController($scope, $routeParams, userService) {
+        var model=this;
+
         var userId = $routeParams.userId;
 
-        $scope.updateUser=updateUser;
-        $scope.unregister=unregister;
+        model.updateUser=updateUser;
+        model.unregister=unregister;
 
         function init() {
-            $scope.user=userService.findUserById(userId); 
+            model.user=userService.findUserById(userId); 
         }
         init(); 
     }

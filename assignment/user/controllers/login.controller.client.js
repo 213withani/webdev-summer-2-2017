@@ -6,8 +6,9 @@
         .controller("loginController", loginController);
 
     function loginController($scope, $location, userService) {
+        var model=this;
         // Event handlers
-        $scope.login=login;
+        model.login=login;
 
         function init() {
             
@@ -18,9 +19,9 @@
             var user = userService.findUserByUsernameAndPassword(user.username, user.password);
             
             if (user === null) {
-                $scope.errorMessage = "User not found.";
+                model.errorMessage = "User not found.";
             } else {
-                $location.url("profile/" + user._id);
+                model.url("profile/" + user._id);
             }
 
         }

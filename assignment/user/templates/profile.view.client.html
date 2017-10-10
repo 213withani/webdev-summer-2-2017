@@ -1,4 +1,4 @@
-<div class="ial-profile" ng-controller="profileController">
+<div class="ial-profile">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -29,7 +29,7 @@
     <div class="container-fluid">
 
         <label for="firstName">First Name</label>
-        <input ng-model="user.firstName" 
+        <input ng-model="model.user.firstName" 
             placeholder="Alice" 
             type="text" 
             name="firstName" 
@@ -37,7 +37,7 @@
             class="form-control">
         
         <label for="lastName">Last Name</label>
-        <input ng-model="user.lastName" 
+        <input ng-model="model.user.lastName" 
             placeholder="Wonderland" 
             type="text" 
             name="lastName" 
@@ -45,7 +45,7 @@
             class="form-control">
 
         <label for="username">Username</label>
-        <input ng-model="user.username" 
+        <input ng-model="model.user.username" 
             readonly 
             value="Alice" 
             placeholder="Alice" 
@@ -76,11 +76,11 @@
         role="button">Logout</a>
 
         <a class="btn btn-danger btn-block" href="#!/login" 
-        ng-click="unregister()"
+        ng-click="model.unregister()"
         role="button">Unregister</a>
 
         <a class="btn btn-danger btn-block" href="#!/login" 
-        ng-click="updateUser()"
+        ng-click="model.updateUser()"
         role="button">Update</a>
     </div>
     </nav>
