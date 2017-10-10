@@ -11,9 +11,16 @@
     
         var api = {
             "findUserByUsernameAndPassword":findUserByUsernameAndPassword,
-            "findUserById":findUserById
+            "findUserById":findUserById,
+            "registerUser":registerUser
         };
         return api;
+
+        function registerUser(user) {
+            user._id=(new Date()).getTime()+"";
+            users.push(user);
+            return user;
+        }
 
         function findUserById(userId) {
             for (var u in users) {
