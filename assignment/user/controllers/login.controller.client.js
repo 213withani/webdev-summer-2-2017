@@ -16,12 +16,16 @@
         init();
 
         function login(user) {
-            var user = userService.findUserByUsernameAndPassword(user.username, user.password);
+            if (!user) {
+                model.errorMessage = "User not found.";
+                return;
+            }
+            user = userService.findUserByUsernameAndPassword(user.username, user.password);
             
             if (user === null) {
                 model.errorMessage = "User not found.";
             } else {
-                model.url("profile/" + user._id);
+                $location.url("profile/" + user._id);
             }
 
         }

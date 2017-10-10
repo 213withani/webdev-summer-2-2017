@@ -15,7 +15,7 @@
         }).when("/profile/:userId", {
             templateUrl: "user/templates/profile.view.client.html",
             controller: "profileController",
-            controllerAs: "model"
+            controllerAs: "model" 
         })
     }
 })();   
