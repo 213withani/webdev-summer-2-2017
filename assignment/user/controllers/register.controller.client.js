@@ -4,7 +4,7 @@
             .module("WampApp")
             .controller("registerController", registerController);
 
-        function registerController(userService,$location) {
+        function registerController(userService, $location) {
             var model = this;
 
             model.registerUser = registerUser;
@@ -15,10 +15,14 @@
             init();
 
             function registerUser(user) {
-                var user = userService.registerUser(user);
-                console.log("registerUser");
-                console.log(user);
-                $location.url("/profile/" + user._id);
+                var _user = userService.findUserByUsername(user.username);
+                if (!_user) {
+                    var user = userService.registerUser(user);
+
+                    $location.url("/profile/" + user._id);
+                } else {
+                    model.error = "User already exists.";
+                }
 
             }
         }
