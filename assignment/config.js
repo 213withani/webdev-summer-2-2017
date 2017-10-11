@@ -13,11 +13,15 @@
         }).when("/register", {
             templateUrl: "user/templates/register.view.client.html",
             controller: "registerController",
-            controllerAs: "model" 
+            controllerAs: "model"
         }).when("/profile/:userId", {
             templateUrl: "user/templates/profile.view.client.html",
             controller: "profileController",
-            controllerAs: "model" 
+            controllerAs: "model"
         })
+            // Website routes
+            .when("/user/:userId/website", {
+                templateUrl: "website/templates/website-list.html"
+            })
     }
 })();   
