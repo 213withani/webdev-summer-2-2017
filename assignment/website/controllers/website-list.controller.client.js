@@ -3,7 +3,7 @@
         .module("WampApp")
         .controller("websiteListController",websiteListController);
 
-    function websiteListController($routeParams) {
+    function websiteListController($routeParams, websiteService) {
         var model = this;
 
         var userId = $routeParams.userId;
@@ -13,7 +13,7 @@
         ];
 
         function init() {
-            model.websites=websites;
+            model.websites=websiteService.findWebsitesForUser(userId);
         }
         init();
     }
