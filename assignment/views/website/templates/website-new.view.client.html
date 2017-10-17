@@ -29,54 +29,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-3 visible-lg .ial-split-view-left">
-                <ul class="list-group">
-                    <li class="list-group-item active">
-                        <div class="row">
-                            <div class="col-xs-4">Name</div>
-                            <div class="col-xs-6 col-sm-3">Updated</div>
-                            <div class="col-sm-3 hidden-xs">Visits</div>
-                            <div class="col-xs-2">
-                                <a href="website-new.html">
-                                            <span class="glyphicon glyphicon-plus pull-right"></span>
-                                        </a>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-xs-4">Wiki</div>
-                            <div class="col-xs-6 col-sm-3">2017</div>
-                            <div class="col-sm-3 hidden-xs">1,111,111</div>
-                            <div class="col-xs-2"><span class="glyphicon glyphicon-cog pull-right"></span></div>
-                        </div>
-                    </li>
-
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-xs-4">Facebook</div>
-                            <div class="col-xs-6 col-sm-3"></div>
-                            <div class="col-sm-3 hidden-xs"></div>
-                            <div class="col-xs-2"><span class="glyphicon glyphicon-cog pull-right"></span></div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-xs-4">Twitter</div>
-                            <div class="col-xs-6 col-sm-3"></div>
-                            <div class="col-sm-3 hidden-xs"></div>
-                            <div class="col-xs-2"><span class="glyphicon glyphicon-cog pull-right"></span></div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-xs-4">Amazon</div>
-                            <div class="col-xs-6 col-sm-3"></div>
-                            <div class="col-sm-3 hidden-xs"></div>
-                            <div class="col-xs-2"><span class="glyphicon glyphicon-cog pull-right"></span></div>
-                        </div>
-                    </li>
-                </ul>
+                <div ng-include="'views/website/templates/website-list.component.client.html'"></div>
             </div>
             <div class="col-lg-9 col-xs-12 .ial-split-view-right">
 
@@ -88,7 +41,7 @@
                 <textarea rows=5 placeholder="Description Description Description" type="text" name="name" id="name" class="form-control"></textarea>
 
                 <a class="btn btn-primary btn-block" href="website-list.html" role="button">Create</a>
-                <a class="btn btn-danger btn-block" href="website-list.html" role="button">Cancel</a>
+                <a class="btn btn-danger btn-block" href="#!/user/{{model.userId}}/website " role="button">Cancel</a>
             </div>
         </div>
     </div>

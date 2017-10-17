@@ -28,14 +28,14 @@
             controllerAs: "model"
         })
             // Website routes
-            .when("views//user/:userId/website", {
-                templateUrl: "website/templates/website-list.view.client.html",
+            .when("views/user/:userId/website", {
+                templateUrl: "views/website/templates/website-list.view.client.html",
                 controller: "websiteListController",
                 controllerAs: "model"
-            }).when("views//user/:userId/website/new", {
-                templateUrl: "website/templates/website-new.view.client.html"
-                // controller: "websiteListController",
-                // controllerAs: "model"
+            }).when("views/user/:userId/website/new", {
+                templateUrl: "views/website/templates/website-new.view.client.html",
+                controller: "websiteNewController",
+                controllerAs: "model"
             })
     }
 })();   
