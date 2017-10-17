@@ -5,13 +5,13 @@
     angular.module("WampApp")
         .controller("loginController", loginController);
 
-    function loginController($scope, $location, userService) {
-        var model=this;
+    function loginController($location, userService, $rootScope) {
+        var model = this;
         // Event handlers
-        model.login=login;
+        model.login = login;
 
         function init() {
-            
+
         }
         init();
 
@@ -21,10 +21,11 @@
                 return;
             }
             user = userService.findUserByUsernameAndPassword(user.username, user.password);
-            
+
             if (user === null) {
                 model.errorMessage = "User not found.";
             } else {
+                $rootScope.currentUser = user;
                 $location.url("profile/" + user._id);
             }
 

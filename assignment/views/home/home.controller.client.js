@@ -5,5 +5,10 @@
 
     function homeController() {
         console.log("inside homeController");
+        var model=this;
+        function init() {
+            
+        }
+        init()
     }
 })();
