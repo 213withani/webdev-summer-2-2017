@@ -7,35 +7,35 @@
 
     function configuration($routeProvider) {
         $routeProvider
-        .when("/", {
-            templateUrl: "views/home/home.view.client.html",
-            controller: "homeController",
-            controllerAs: "model"
-        })
-        .when("/login", {
-            templateUrl: "views/user/templates/login.view.client.html",
-            controller: "loginController",
-            controllerAs: "model"
-        })
-        .when("/register", {
-            templateUrl: "views/user/templates/register.view.client.html",
-            controller: "registerController",
-            controllerAs: "model"
-        })
-        .when("/profile/:userId", {
-            templateUrl: "views/user/templates/profile.view.client.html",
-            controller: "profileController",
-            controllerAs: "model"
-        })
-            // Website routes
-            .when("views/user/:userId/website", {
+            .when("/", {
+                templateUrl: "views/home/home.view.client.html",
+                controller: "homeController",
+                controllerAs: "model"
+            })
+            .when("/login", {
+                templateUrl: "views/user/templates/login.view.client.html",
+                controller: "loginController",
+                controllerAs: "model"
+            })
+            .when("/register", {
+                templateUrl: "views/user/templates/register.view.client.html",
+                controller: "registerController",
+                controllerAs: "model"
+            })
+            .when("/profile/:userId", {
+                templateUrl: "views/user/templates/profile.view.client.html",
+                controller: "profileController",
+                controllerAs: "model"
+            })
+            .when("/user/:userId/website", {
                 templateUrl: "views/website/templates/website-list.view.client.html",
                 controller: "websiteListController",
                 controllerAs: "model"
-            }).when("views/user/:userId/website/new", {
+            })
+            .when("/user/:userId/website/new", {
                 templateUrl: "views/website/templates/website-new.view.client.html",
                 controller: "websiteNewController",
                 controllerAs: "model"
-            })
+            });
     }
 })();   
