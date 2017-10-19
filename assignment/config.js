@@ -39,7 +39,7 @@
             })
             .when("/user/:userId/website/:websiteId/page/:pageId/widget", {
                 templateUrl: "views/widget/templates/widget-list.view.client.html",
-                controller: "websiteNewController",
+                controller: "widgetListController",
                 controllerAs: "model"
             })
             ;
