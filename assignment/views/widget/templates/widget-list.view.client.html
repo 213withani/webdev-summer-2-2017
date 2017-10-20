@@ -15,9 +15,9 @@
             <div ng-switch-when="IMAGE">
                 <!-- <img ng-src="{{widget.url}}" width="100%"> -->
             </div>
-            <div ng-switch-when="HTML">
-                <!-- {{widget.text}} -->
+            <div ng-switch-when="HTML" ng-bind-html="model.trustHtmlContent(widget.text)">
             </div>
+            
             <div ng-switch-when="YOUTUBE">
                 This is YOUTUBE
             </div>
