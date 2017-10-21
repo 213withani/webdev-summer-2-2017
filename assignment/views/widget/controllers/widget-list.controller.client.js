@@ -7,6 +7,7 @@
         var model = this;
         model.trustHtmlContent = trustHtmlContent;
         model.trustUrlResource = trustUrlResource;
+        model.getWidgetIncludeUrl = getWidgetIncludeUrl
         function init() {
             model.hello = "Hello from widgetListController";
             model.widgets =
@@ -18,6 +19,9 @@
                 ];
         }
         init();
+        function getWidgetIncludeUrl(widgetType) {
+            return "views/widget/templates/widgets/widget-" + widgetType + ".view.client.html";
+        }
         function trustUrlResource(url) {
             console.log(url);
             var youtubeUrl = "https://www.youtube.com/embed/";
@@ -26,7 +30,7 @@
             return $sce.trustAsResourceUrl(youtubeUrl);
         }
         function trustHtmlContent(htmlContent) {
-            return $sce.trustAsHtml (htmlContent);
+            return $sce.trustAsHtml(htmlContent);
         }
     }
 })();
